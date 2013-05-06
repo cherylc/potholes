@@ -1,0 +1,25 @@
+<h1>Potholes#index</h1>
+
+<table>
+  <tr>
+    <th>Creation Date</th>
+    <th>Status</th>
+    <th>Street Address</th>
+    <th>Zip</th>
+    <th>Current Activity</th>
+    <th>Number of Potholes Filled</th>
+  </tr>
+
+    <% @potholes.each do |pothole| %>
+      <tr>
+        <td><%= pothole.creation_date %></td>
+        <td><%= pothole.status %></td>
+        <td><%= pothole.address %></td>
+        <td><%= pothole.zip %></td>
+        <td><%= pothole.current_activity %></td>
+        <td><%= pothole.potholes_filled %></td>
+        <td><%= link_to 'Show', pothole %></td>
+        <td><%= link_to 'Delete', pothole, confirm: 'Are you sure?', method: :delete  %></td>
+      </tr>
+    <% end %>
+  </table>
